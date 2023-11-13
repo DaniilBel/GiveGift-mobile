@@ -88,4 +88,6 @@ app -> src
 - test <- можно спокойно писать свои юнит тесты
   
 
-![Alt text](https://github.com/spbu-math-cs/GiveGift-mobile/blob/newHorizons/mobapp.PNG?raw=true "Mobile")
+![Alt text](https://github.com/DaniilBel/GiveGift-mobile/blob/newHorizons/mobapp1.jpg?raw=true "Mobile")
+
+![Alt text](https://github.com/DaniilBel/GiveGift-mobile/blob/newHorizons/mobapp2.jpg?raw=true "Mobile")

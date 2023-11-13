@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.google.android.material.appbar.AppBarLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/orange"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:title="@string/app_name"
+            app:titleTextColor="@color/white" />
+
+        <!--&lt;!&ndash;            <ImageView&ndash;&gt;
+&lt;!&ndash;                android:id="@+id/imageView2"&ndash;&gt;
+&lt;!&ndash;                android:layout_width="wrap_content"&ndash;&gt;
+&lt;!&ndash;                android:layout_height="24dp"&ndash;&gt;
+&lt;!&ndash;                android:layout_marginEnd="9dp"&ndash;&gt;
+&lt;!&ndash;                app:layout_constraintBottom_toBottomOf="parent"&ndash;&gt;
+&lt;!&ndash;                app:layout_constraintEnd_toStartOf="@+id/textView2"&ndash;&gt;
+&lt;!&ndash;                app:layout_constraintTop_toTopOf="parent"&ndash;&gt;
+&lt;!&ndash;                app:srcCompat="@drawable/baseline_account_circle_24" />&ndash;&gt;
+-->
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/acc_img"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/baseline_account_circle_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.appbar.AppBarLayout>

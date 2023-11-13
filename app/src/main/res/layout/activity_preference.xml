@@ -1,18 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical"
+    android:weightSum="7"
     tools:context=".PreferenceActivity">
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/pref_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/layout_pref_height"
+        android:layout_weight="2"
+        android:orientation="vertical"
+        android:layout_margin="15dp">
+
+        <TextView
+            android:id="@+id/editTextText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/preferences"
+            android:textColor="@color/black"
+            android:textSize="23sp"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <include
+                android:id="@+id/pref_container"
+                layout="@layout/activity_preference_preferences" />
+
+        </ScrollView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/price_layout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Хочешь подарок? Хер тебе."
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_weight="2"
+        android:orientation="vertical"
+        android:layout_margin="15dp"
+        app:layout_constraintTop_toBottomOf="@id/pref_layout">
+
+        <TextView
+            android:id="@+id/editTextText2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/price"
+            android:textColor="@color/black"
+            android:textSize="23sp"/>
+
+        <include
+            android:id="@+id/price"
+            layout="@layout/activity_preference_price" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/num_of_ideas_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:layout_weight="2"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/price_layout">
+
+        <TextView
+            android:id="@+id/editTextText3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/num_of_ideas"
+            android:textColor="@color/black"
+            android:textSize="23sp" />
+
+        <include
+            android:id="@+id/ideas"
+            layout="@layout/activity_preference_num_of_ideas" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/num_of_ideas_layout">
+
+        <include
+            android:id="@+id/main_footer"
+            layout="@layout/activity_preference_footer" />
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,7 +1,9 @@
 package com.example.givegiftdesign;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.LinearLayoutCompat;
 import androidx.appcompat.widget.Toolbar;
+import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +12,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.view.Menu;
 
@@ -26,25 +30,59 @@ public class MainActivity extends AppCompatActivity {
     private GiftBlock giftBlock() {
         return new GiftBlock(
                 "https://i.imgur.com/67tSocD.jpeg",
-                "Попуг",
+                "",
                 "https://imgur.com/gallery/67tSocD"
         );
     }
 
+    LinearLayoutCompat mainLayout;
+
+    // Люблю попугов
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//        setContentView(R.layout.toobar_user);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        giftImageView = findViewById(R.id.gift_image);
-        giftDescription = findViewById(R.id.gift_desc);
-        giftSearch = findViewById(R.id.gift_search);
+        mainLayout = findViewById(R.id.gift_layout);
 
-        displayGiftBlockInfo(giftBlock());
+        Button giftIdeaBtn = findViewById(R.id.gift_idea);
+        giftIdeaBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                CardView cardView = new CardView(MainActivity.this);
+                LinearLayout linearLayout = new LinearLayout(MainActivity.this);
+                ImageView imageView = new ImageView(MainActivity.this);
+                TextView textView = new TextView(MainActivity.this);
+                Button button = new Button(MainActivity.this);
+
+                GiftBlockConstructor giftBlockConstructor = new GiftBlockConstructor(
+                        cardView,
+                        linearLayout,
+                        imageView,
+                        textView,
+                        button,
+                        getResources()
+                );
+
+                View giftIdeaView = giftBlockConstructor.giftViewParams(giftBlock());
+                mainLayout.addView(giftIdeaView);
+            }
+        });
+
+//        giftImageView = findViewById(R.id.gift_image_one);
+//        giftDescription = findViewById(R.id.gift_desc_one);
+//        giftSearch = findViewById(R.id.gift_search_one);
+//
+//        displayGiftBlockInfo(giftBlock());
+//
+//        giftImageView = findViewById(R.id.gift_image_two);
+//        giftDescription = findViewById(R.id.gift_desc_two);
+//        giftSearch = findViewById(R.id.gift_search_two);
+//
+//        displayGiftBlockInfo(giftBlock());
 
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(view -> startActivity(new Intent(MainActivity.this, PreferenceActivity.class)));
@@ -71,6 +109,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(this, FriendsActivity.class));
                 return true;
             case 3:
+                Log.d("Exit", "clicked");
+                startActivity(new Intent(this, RegistryActivity.class));
                 return true;
         }
 

@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">GiveGift</string>
-    <string name="gift_search">Search</string>
+    <string name="gift_search">Give me an idea!</string>
     <string name="gift_desc">Попуг</string>
     <string name="gift_img">Gift</string>
     <string name="friends">Friends</string>
@@ -10,4 +10,15 @@
 
     <string name="hello_text">Profile</string>
     <string name="hello_text_friends">You have no friends</string>
+    <string name="profile_name">Profile Name</string>
+    <string name="edit_profile">Edit profile</string>
+    <string name="megamarket">Megamarket</string>
+    <string name="price">Price</string>
+    <string name="num_of_ideas">Number of ideas</string>
+    <string name="delete" translatable="false">X</string>
+    <string name="from">from</string>
+    <string name="to">to</string>
+    <string name="count_of">Max 20</string>
+    <string name="count_val">Count</string>
+    <string name="interests">Interests</string>
 </resources>

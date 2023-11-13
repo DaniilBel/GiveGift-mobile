@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">ДариДары</string>
-    <string name="gift_search">Искать</string>
+    <string name="gift_search">Выдай идею!</string>
     <string name="gift_desc">Попуг</string>
     <string name="gift_img">Подарок</string>
     <string name="friends">Друзья</string>
@@ -10,6 +10,14 @@
     <string name="preferences">Предпочтения</string>
     <string name="hello_text">Привет</string>
     <string name="hello_text_friends">У тебя нет друзей</string>
-
-
+    <string name="profile_name">Имя пользователя</string>
+    <string name="edit_profile">Изменить профиль</string>
+    <string name="megamarket">Мегамаркет</string>
+    <string name="price">Цена</string>
+    <string name="num_of_ideas">Количество идей</string>
+    <string name="from">от</string>
+    <string name="to">до</string>
+    <string name="count_of">Максимум 20</string>
+    <string name="count_val">Количество</string>
+    <string name="interests">Интересы</string>
 </resources>
