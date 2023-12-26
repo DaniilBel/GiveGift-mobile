@@ -151,6 +151,7 @@ public class MainActivity extends AppCompatActivity {
                 cleanScreen();
                 setMascot(R.mipmap.gift_foreground);
                 setProgressBar();
+                dancingMascot();
                 progressBar.setVisibility(View.VISIBLE);
 
                 RequestData requestData = new RequestData(Account.getInterests(), Account.getPrice_range());
@@ -166,6 +167,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 cleanScreen();
                 setMascot(R.mipmap.greetings_foreground);
+                setProgressBar();
+                dancingMascot();
+                progressBar.setVisibility(View.INVISIBLE);
             }
         });
 

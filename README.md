@@ -151,3 +151,5 @@ app -> src
 ![Alt text](https://github.com/DaniilBel/GiveGift-mobile/blob/newHorizons/mobapp1.jpg?raw=true "Mobile")
 
 ![Alt text](https://github.com/DaniilBel/GiveGift-mobile/blob/newHorizons/mobapp2.jpg?raw=true "Mobile")
+
+![Alt text](https://github.com/DaniilBel/GiveGift-mobile/blob/newHorizons/mobapp3.jpg?raw=true "Mobile")
