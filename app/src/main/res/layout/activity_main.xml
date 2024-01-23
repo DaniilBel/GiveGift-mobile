@@ -12,27 +12,38 @@
     <include
         android:id="@+id/main_toolbar"
         layout="@layout/activity_main_toolbar"
-        android:layout_weight="0"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_weight="0" />
 
-    <ScrollView
+    <androidx.core.widget.NestedScrollView
         android:id="@+id/scroll_view"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="7"
-        android:contentDescription="@string/gift_desc">
+        android:clipToPadding="false"
+        android:contentDescription="@string/gift_desc"
+        android:fillViewport="true"
+        android:orientation="vertical"
+        android:paddingVertical="15dp">
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:id="@+id/gift_layout"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:orientation="vertical">
+            android:clipToPadding="false"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingBottom="10dp"
+            android:showDividers=""
+            android:stackFromBottom="true"
+            android:transcriptMode="alwaysScroll">
+
+            
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -46,7 +57,3 @@
     </RelativeLayout>
 
 </LinearLayout>
-
-    <!--    app:layout_constraintTop_toBottomOf="@+id/main_toolbar"-->
-
-<!--<include layout="@layout/activity_main_gift" />-->

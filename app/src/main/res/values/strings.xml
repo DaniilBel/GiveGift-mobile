@@ -12,7 +12,7 @@
     <string name="hello_text_friends">You have no friends</string>
     <string name="profile_name">Profile Name</string>
     <string name="edit_profile">Edit profile</string>
-    <string name="megamarket">Megamarket</string>
+    <string name="wildberries">Wildberries</string>
     <string name="price">Price</string>
     <string name="num_of_ideas">Number of ideas</string>
     <string name="delete" translatable="false">X</string>
@@ -21,4 +21,25 @@
     <string name="count_of">Max 20</string>
     <string name="count_val">Count</string>
     <string name="interests">Interests</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="user_name">User Name</string>
+    <string name="user_email">Email</string>
+    <string name="user_login">Username</string>
+    <string name="user_password">Password</string>
+    <string name="already_an_user_login">Already an user? Login</string>
+    <string name="login">Login</string>
+    <string name="not_yet_registered_sign_up">Not yet registered? Sign Up</string>
+    <string name="update">UPDATE</string>
+
+    <string name="msg_token_fmt" translatable="false">FCM registration Token: %s</string>
+    <string name="channel_name" translatable="false">Reminder</string>
+    <string name="channel_description" translatable="false">Давно тебя не было в уличных гонках</string>
+    <string name="price_range">Price range</string>
+    <string name="tagline">Making people happy :)</string>
+    <string name="save">Save</string>
+    <string name="about">About</string>
+    <string name="example">Example</string>
+    <string name="age">Age</string>
+    <string name="list_of_wishes">List of wishes</string>
+    <string name="maskot" translatable="false">Chicken</string>
 </resources>

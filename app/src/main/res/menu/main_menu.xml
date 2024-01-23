@@ -9,15 +9,8 @@
         />
 
     <item
-        android:id="@+id/friends"
-        android:orderInCategory="2"
-        android:title="@string/friends"
-        android:icon="@drawable/ic_gift_name"
-        />
-
-    <item
         android:id="@+id/logout"
-        android:orderInCategory="3"
+        android:orderInCategory="2"
         android:title="@string/logout"
         android:icon="@drawable/ic_logout_name"
         />

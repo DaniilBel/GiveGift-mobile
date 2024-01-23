@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="main_cardview_margin_top">20dp</dimen>
+    <dimen name="main_cardview_padding_bottom">20dp</dimen>
+    <dimen name="main_cardview_margin">10dp</dimen>
+    <dimen name="linearlayout_padding_bottom">20dp</dimen>
+    <dimen name="inner_linearlayout_padding">20dp</dimen>
     <dimen name="main_img_size">200dp</dimen>
     <dimen name="main_img_margin_start">30dp</dimen>
-    <dimen name="main_img_margin_top">10dp</dimen>
+    <dimen name="main_img_margin_top">30dp</dimen>
     <dimen name="main_img_margin_end">30dp</dimen>
     <dimen name="main_text_margin_start">30dp</dimen>
     <dimen name="main_text_margin_top">10dp</dimen>
@@ -12,6 +15,7 @@
     <dimen name="main_button_margin_top">10dp</dimen>
     <dimen name="main_button_margin_bottom">30dp</dimen>
     <dimen name="main_button_padding">10dp</dimen>
+    <dimen name="main_progressbar_top_margin">50dp</dimen>
 
     <dimen name="cardview_cornerradius">15dp</dimen>
 
@@ -21,6 +25,7 @@
     <dimen name="pref_textview_textsize">7sp</dimen>
     <dimen name="pref_button_width">40dp</dimen>
     <dimen name="pref_button_height">40dp</dimen>
+    <dimen name="layout_pref_height">225dp</dimen>
 
-    <dimen name="layout_pref_height">135dp</dimen>
+
 </resources>

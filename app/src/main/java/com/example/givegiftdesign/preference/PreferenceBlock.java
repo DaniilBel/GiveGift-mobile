@@ -1,5 +1,6 @@
 package com.example.givegiftdesign.preference;
 
+import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.util.TypedValue;
@@ -15,15 +16,29 @@ import androidx.constraintlayout.widget.ConstraintSet;
 
 import com.example.givegiftdesign.R;
 
-import java.util.ArrayList;
+import java.util.List;
 
+/**
+ * Методы конструирования CardView с предпочтением
+ */
 public class PreferenceBlock {
+
+    /**
+     * Помимо присвоения переменных в конструкторе конструируется блок,
+     * потом кнопке дается возможность удалять свой блок
+     * @param cardViewBlock - внешний контейнер
+     * @param innerBlock - внутренний контейнер
+     * @param pref - область текста для предпочтения
+     * @param closeBtn - кнопка для удаления своего блока
+     * @param resources - размерности
+     * @param prefs - массив предпочтений
+     */
     public PreferenceBlock(CardView cardViewBlock,
                            ConstraintLayout innerBlock,
                            TextView pref,
                            Button closeBtn,
                            Resources resources,
-                           ArrayList<String> prefs) {
+                           List<String> prefs) {
         this.cardViewBlock = cardViewBlock;
         this.innerBlock = innerBlock;
         this.pref = pref;
@@ -40,17 +55,30 @@ public class PreferenceBlock {
     Button closeBtn;
     Resources resources;
 
+    /**
+     * Устанавливает в TextView строку, полученную из меню в классе PreferenceActivity
+     * @param selectedItem - элемент текста из меню
+     * @return - CardView с установленным предпочтением
+     */
     public View prefViewParam(String selectedItem) {
         pref.setText(selectedItem);
 
         return cardViewBlock;
     }
 
+    /**
+     *
+     * @return - id одного CardView
+     */
     public int getId() {
         return cardViewBlock.getId();
     }
 
-    private void setDeleteBtn(ArrayList<String> prefs) {
+    /**
+     * Кнопка удаляет свой блок и удаляет соответствующее предпочтение
+     * @param prefs - массив предпочтений, элемент которого будет удалён
+     */
+    private void setDeleteBtn(List<String> prefs) {
         closeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -61,6 +89,11 @@ public class PreferenceBlock {
         });
     }
 
+    /**
+     * Устанавливаются CardView -> ConstrainedLayout -> TextView -> Button ->
+     * добавляем в ConstrainedLayout -> ConstraintSet -> добавляем ConstraintSet в CardView
+     */
+    @SuppressLint("UseCompatLoadingForDrawables")
     private void setPrefBlock() {
         // Самый внешний элемент, который может задать border radius
         final int cardMargin = (int) TypedValue.applyDimension(

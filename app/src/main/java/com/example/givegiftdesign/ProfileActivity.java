@@ -2,52 +2,115 @@ package com.example.givegiftdesign;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.RequestOptions;
-import com.example.givegiftdesign.profilescreen.adapter.CollectionAdapter;
-import com.example.givegiftdesign.profilescreen.adapter.PostAdapter;
-import com.example.givegiftdesign.profilescreen.api.MyretrofitClient;
-import com.example.givegiftdesign.profilescreen.model.UserCollection;
-import com.example.givegiftdesign.profilescreen.model.UserData;
-import com.example.givegiftdesign.profilescreen.model.UserPost;
-
-import java.util.List;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class ProfileActivity extends AppCompatActivity {
-    ImageView profileimage;
+
+    //Hooks
+    ImageView profile_image;
+    TextView user_name, age, about, email, password, username;
+    Button update_button;
+    FirebaseDatabase firebaseDatabase;
+    // creating a variable for our
+    // Database Reference for Firebase.
+    DatabaseReference databaseReference;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_profile);
+
+        profile_image = findViewById(R.id.profile_image);
+        user_name = findViewById(R.id.user_name);
+        age = findViewById(R.id.age);
+        about = findViewById(R.id.about_user);
+        email = findViewById(R.id.signup_email);
+        password = findViewById(R.id.signup_password);
+        username = findViewById(R.id.login_username);
+        update_button = findViewById(R.id.update_profile);
+
+        update_button.setOnClickListener(view -> {
+            Intent intent = new Intent(ProfileActivity.this, UpdateActivity.class);
+            startActivity(intent);
+        });
+
+        firebaseDatabase = FirebaseDatabase.getInstance("https://givegift-241db-default-rtdb.europe-west1.firebasedatabase.app/");
+        databaseReference = firebaseDatabase.getReference("users");
+
+        /*Intent intent = getIntent();
+        String userUsername = intent.getStringExtra("username");
+        getData(userUsername);
+
+        if (userUsername == null) {
+            Toast.makeText(ProfileActivity.this, "Fail to get data.", Toast.LENGTH_SHORT).show();
+        }*/
+    }
+
+    private void getData(String userUsername) {
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String nameFromDB = snapshot.child(userUsername).child("password").getValue(String.class);
+                String usernameFromDB = snapshot.child(userUsername).child("password").getValue(String.class);
+
+                user_name.setText(nameFromDB);
+                username.setText(usernameFromDB);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Toast.makeText(ProfileActivity.this, "Fail to get data.", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+}
+                    /* intent = getIntent();
+                    String user_username = intent.getStringExtra("username");
+                    String user_name_db = intent.getStringExtra("user_name");
+                    String user_email = intent.getStringExtra("email");
+                    String user_password = intent.getStringExtra("password");
+
+                    user_name.setText(nameFromDB);
+                    username.setText(usernameFromDB);*/
+
+/*
+public class ProfileActivity extends AppCompatActivity {
+
     List<UserCollection>userCollections;
     List<UserPost>userPosts;
     CollectionAdapter collectionAdapter;
     PostAdapter postAdapter;
     RecyclerView collection;
     TextView username,userinfo,userpost,userfollower,userfollowing;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
-        profileimage=(ImageView)findViewById(R.id.profile_image);
-        username=(TextView)findViewById(R.id.username);
-        userpost=(TextView)findViewById(R.id.posts);
-        userinfo=(TextView)findViewById(R.id.about);
-        userfollower=(TextView)findViewById(R.id.follower);
-        userfollowing=(TextView)findViewById(R.id.following);
+        profile_image = findViewById(R.id.profile_image);
+        username= findViewById(R.id.username);
+        userpost= findViewById(R.id.posts);
+        userinfo= findViewById(R.id.about);
+        userfollower= findViewById(R.id.follower);
+        userfollowing= findViewById(R.id.following);
 
-        getuserdata();
+        getUserData();
 
-        collection=(RecyclerView)findViewById(R.id.rec_collection);
+        collection= findViewById(R.id.rec_collection);
         collection.setHasFixedSize(true);
         collection.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false));
         getcollectiondata();
@@ -57,7 +120,7 @@ public class ProfileActivity extends AppCompatActivity {
         getpostdata();
     }
 
-    private void getuserdata() {
+    private void getUserData() {
         Call<UserData>call= MyretrofitClient.getInstance().getMyApi().geuserdata();
         call.enqueue(new Callback<UserData>() {
             @Override
@@ -77,7 +140,7 @@ public class ProfileActivity extends AppCompatActivity {
                 Glide.with(getApplicationContext())
                         .load(profileimg)
                         .apply(RequestOptions.circleCropTransform())
-                        .into(profileimage);
+                        .into(profile_image);
             }
 
             @Override
@@ -120,3 +183,4 @@ public class ProfileActivity extends AppCompatActivity {
         });
     }
 }
+*/

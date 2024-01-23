@@ -24,16 +24,56 @@ git pull origin newHorizons
 app -> src -> main ->
 
 - java/com/example/givegiftdesign
+
+-- preference <- детали реализации для окна с выбором предпочтений
+
+--- PreferenceBlock.java <- конструирование блока с предпочтением
+
+--- Price.java <- логика для ценового диапазона
+
+-- profilwscreen <- 
+
+--- adapter <- 
+
+---- CollectionAdapter.java <- 
+
+---- PostAdapter.java <- 
+
+--- api <- 
+
+---- MyApi.java <- интерфейс
+
+---- MyretrofitClient.java <- 
+
+--- model <-
+
+---- UserCollection.java <- 
+
+---- UserData.java <- 
+
+---- UserPost.java <- 
+
+-- request <- происходит работа с вебом
+
+--- Account.java <- содержит всё необходимое для аккаунта
+
+--- Request.java <- производит запрос в веб и конструирует данные
+
+--- ServerApi.java <- интерфейс. Нужен для запросов
+
+-- FriendsActivity.java <- логика окна с друзьями. Переход осуществляется через меню
   
 -- GiftBlock.java <- лежит инфа об элементе, в котором хранится картина, описание и ссылка на подарок
+
+-- GiftBlockConstructor.java <- создает view блок сгенерированного подарка
   
 -- MainActivity.java <- главный класс, с которого стартует приложение
 
--- FriendsActivity.java <- логика окна с друзьями. Переход осуществляется через меню
+-- PreferenceActivity.java <- окно с предпочтениями. Переход осуществляется через FloatingActionButton (внизу)
 
 -- ProfileActivity.java <- логика окна с профилем. Переход осуществляется через меню
 
--- PreferenceActivity.java <- окно с предпочтениями. Переход осуществляется через FloatingActionButton (внизу)
+-- RegistryActivity.java <- 
 
 - res
   
@@ -41,17 +81,39 @@ app -> src -> main ->
   
 -- layout <- лежат окна приложения
 
---- activity_main.xml <- главное окно, где будут располагаться элементы с подарками
+--- activity_registry.xml <- 
 
 --- activity_friends.xml <- окно с друзьями
 
+--- activity_main.xml <- главное окно, где будут располагаться элементы с подарками
+
+--- activity_main_footer.xml <- низ главного окна
+
+--- activity_main_gift.xml <- include блока с подарком (используется как шаблон)
+
+--- activity_main_toolbar.xml <- поле с надписью и меню-аккаунтом
+
 --- activity_preference.xml <- окно с предпочтениями
+
+--- activity_preference_block.xml <- include блока с предпочтением (используется как шаблон)
+
+--- activity_preference_footer.xml <- низ окна с предпочтениями
+
+--- activity_preference_preferences.xml <- поле с установкой предпочтений
+
+--- activity_preference_price.xml <- поле с установкой цены
 
 --- activity_profile.xml <- окно с профилем
 
+--- collection_layout.xml <- 
+
+--- post_layout.xml <- 
+
 -- menu
 
---- main_menu.xml <- элементы в выпадающем меню
+--- main_menu.xml <- элементы в выпадающем меню в main activity
+
+--- pref_menu.xml <- элементы для выбора предпочтений в preference activity
 
 -- mipmap-* <- хранятся изображения с разными разрешениями для разных устройств
 
@@ -59,17 +121,15 @@ app -> src -> main ->
 
 --- colors.xml <- захардкоженные цвета
 
---- strings.xml <- захардкоженные строки
+--- dimens.xml <- размерности элементов для работы с разными разрешениями
 
---- themes.xml <- задаются темы и свойства для элементов, чтоб повторений не было. В некторых источниках пишут styles.xml
+--- strings* <- захардкоженные строки (для англ и рус версии)
+
+--- themes* <- задаются темы и свойства для элементов, чтоб повторений не было. В некоторых источниках пишут styles.xml
 
 -- values-night <- стили для ночной темы
 
 --- themes.xml
-
--- values-ru <- локализация на русский (если она вообще будет)(PS: на будущее)
-
---- strings.xml
 
 -- xml
 
@@ -91,3 +151,5 @@ app -> src
 ![Alt text](https://github.com/DaniilBel/GiveGift-mobile/blob/newHorizons/mobapp1.jpg?raw=true "Mobile")
 
 ![Alt text](https://github.com/DaniilBel/GiveGift-mobile/blob/newHorizons/mobapp2.jpg?raw=true "Mobile")
+
+![Alt text](https://github.com/DaniilBel/GiveGift-mobile/blob/newHorizons/mobapp3.jpg?raw=true "Mobile")

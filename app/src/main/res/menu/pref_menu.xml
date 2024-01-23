@@ -1,21 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/item1"
-        android:title="Гонки"/>
-    <item
-        android:id="@+id/item2"
-        android:title="Онеме"/>
+        android:id="@+id/item0"
+        android:title="Добавить"/>
 
     <item
-        android:id="@+id/item3"
+        android:id="@+id/item1"
+        android:title="Кино"/>
+
+    <item
+        android:id="@+id/item2"
         android:title="Мультфильмы"/>
 
     <item
+        android:id="@+id/item3"
+        android:title="Походы"/>
+
+    <item
         android:id="@+id/item4"
-        android:title="Еда"/>
+        android:title="Романтика"/>
 
     <item
         android:id="@+id/item5"
-        android:title="Запрещенка"/>
+        android:title="Цветы"/>
+
+    <item
+        android:id="@+id/item6"
+        android:title="Духи"/>
+
+    <item
+        android:id="@+id/item7"
+        android:title="Книги"/>
+
+    <item
+        android:id="@+id/item8"
+        android:title="Спорт"/>
+
+    <item
+        android:id="@+id/item9"
+        android:title="Природа"/>
+
+    <item
+        android:id="@+id/item10"
+        android:title="Игры"/>
+
+
 </menu>

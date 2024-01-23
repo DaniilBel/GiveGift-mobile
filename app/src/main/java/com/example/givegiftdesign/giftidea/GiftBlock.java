@@ -1,7 +1,11 @@
-package com.example.givegiftdesign;
+package com.example.givegiftdesign.giftidea;
 
 import java.util.Objects;
 
+/**
+ * Данные выданного подарка
+ * Само конструирование блока происходит в GiftBlockConstructor
+ */
 public class GiftBlock {
     private String imageUrl;
     private String description;

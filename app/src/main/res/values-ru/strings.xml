@@ -12,7 +12,7 @@
     <string name="hello_text_friends">У тебя нет друзей</string>
     <string name="profile_name">Имя пользователя</string>
     <string name="edit_profile">Изменить профиль</string>
-    <string name="megamarket">Мегамаркет</string>
+    <string name="wildberries">Wildberries</string>
     <string name="price">Цена</string>
     <string name="num_of_ideas">Количество идей</string>
     <string name="from">от</string>
@@ -20,4 +20,20 @@
     <string name="count_of">Максимум 20</string>
     <string name="count_val">Количество</string>
     <string name="interests">Интересы</string>
+    <string name="price_range">Диапазон цены</string>
+    <string name="sign_up">Регистрация</string>
+    <string name="user_name">Имя Пользователя</string>
+    <string name="user_email">Email</string>
+    <string name="user_login">Логин</string>
+    <string name="user_password">Пароль</string>
+    <string name="already_an_user_login">Уже зарегистрирован?</string>
+    <string name="not_yet_registered_sign_up">Ещё не зарегистрирован?</string>
+    <string name="login">Вход</string>
+    <string name="tagline">Делаем людей счастливыми :)</string>
+    <string name="update">Редактировать</string>
+    <string name="save">Сохранить</string>
+    <string name="about">О себе</string>
+    <string name="example">Люблю просыпаться в 6 утра и ходить на пары МКН</string>
+    <string name="age">Возраст</string>
+    <string name="list_of_wishes">List of wishes</string>
 </resources>
